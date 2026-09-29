@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#060506">
+<meta name="description" content="Exotic Car Hire KZN. Where luxury meets prestige. Chauffeur-driven exotic cars for weddings, matric balls, birthdays and special events in Durban, KwaZulu-Natal.">
+<meta property="og:title" content="Exotic Car Hire KZN | Where Luxury Meets Prestige">
+<meta property="og:description" content="Chauffeur-driven exotic cars for weddings, matric balls and special events in Durban.">
+<meta property="og:type" content="website">
+<title>Exotic Car Hire KZN | Where Luxury Meets Prestige</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&family=Manrope:wght@400;500;600&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  @property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  @keyframes orbit { to { --a: 360deg; } }
+
+  :root {
+    --ink: #060506;
+    --panel: #0e0c0b;
+    --gold: #d8b36a;
+    --gold-hi: #f6dc94;
+    --gold-deep: #9b6f2c;
+    --ember: #ff5a1f;
+    --ivory: #f5eee2;
+    --smoke: #a9a196;
+    --line: rgba(216, 179, 106, 0.22);
+    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); background: var(--ink); }
+  body { margin: 0; background: var(--ink); color: var(--ivory); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::after { /* fine film grain */
+    content: ""; position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: .06; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  :focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+  #fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 70; }
+
+  /* reveal on scroll */
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+
+  /* ---------- nav ---------- */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: calc(14px + env(safe-area-inset-top, 0px)) clamp(18px, 4vw, 48px) 14px;
+    background: linear-gradient(to bottom, rgba(6,5,6,.94), rgba(6,5,6,0)); }
+  .logo { text-decoration: none; display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1; }
+  .lg-top { display: inline-flex; align-items: center; font-family: "Anton", Impact, sans-serif; font-size: 1.75rem; letter-spacing: .05em; color: var(--ember); text-shadow: 0 0 18px rgba(255,90,31,.35); }
+  .lg-o { width: 1.02em; height: 1.02em; margin: 0 .02em; }
+  .lg-sub { font-family: "Yellowtail", cursive; font-size: 1.45rem; color: var(--ivory); margin-top: -.42rem; margin-right: .1rem; letter-spacing: .02em; }
+  .lg-sub small { font-family: var(--body); font-size: .62rem; letter-spacing: .3em; color: var(--gold); margin-left: .6rem; font-weight: 600; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a.tx { text-decoration: none; font-size: .95rem; color: var(--smoke); transition: color .2s; }
+  .nav-links a.tx:hover { color: var(--gold-hi); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 28px; border-radius: 999px; font: 600 1rem/1 var(--body); text-decoration: none; cursor: pointer; border: 1px solid var(--gold); transition: transform .2s, box-shadow .2s, background .2s, color .2s; }
+  .btn-gold { background: linear-gradient(120deg, var(--gold-deep), var(--gold) 35%, var(--gold-hi) 55%, var(--gold)); color: #120d05; border-color: transparent; }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(216,179,106,.35); }
+  .btn-line { background: transparent; color: var(--gold-hi); }
+  .btn-line:hover { background: rgba(216,179,106,.12); transform: translateY(-2px); }
+  .nav .btn { min-height: 42px; padding: 0 20px; font-size: .95rem; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+    padding: clamp(120px, 19vh, 180px) clamp(20px, 5vw, 64px) 0;
+    background: radial-gradient(ellipse 70% 55% at 80% 6%, rgba(216,179,106,.20), transparent 65%), radial-gradient(ellipse 50% 40% at 6% 100%, rgba(255,90,31,.14), transparent 70%), var(--ink); }
+  .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center 62%; opacity: .26; transform: scale(1.06); animation: drift 28s ease-in-out infinite alternate;
+    -webkit-mask-image: linear-gradient(to bottom, #000 8%, transparent 90%); mask-image: linear-gradient(to bottom, #000 8%, transparent 90%); filter: saturate(.9); }
+  @keyframes drift { to { transform: scale(1.15) translateY(-1.5%); } }
+  .hero-copy { position: relative; z-index: 2; max-width: 1080px; }
+  .hero h1 { margin: 0; font-family: var(--display); font-weight: 700; font-size: clamp(2.7rem, 9.4vw, 8rem); line-height: .96; letter-spacing: -.015em; text-wrap: balance;
+    background: linear-gradient(100deg, #9b6f2c 0%, #d8b36a 28%, #fff6d4 44%, #d8b36a 58%, #9b6f2c 100%); background-size: 260% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 3.6s cubic-bezier(.2,.7,.2,1) .3s forwards; }
+  .hero p { max-width: 34rem; margin: 26px 0 32px; opacity: .88; font-size: clamp(1.05rem, 2.2vw, 1.25rem); }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .road { position: relative; z-index: 1; margin: 40px calc(clamp(20px, 5vw, 64px) * -1) 0; }
+  .road svg { display: block; width: 100%; max-width: 1200px; height: auto; margin-left: auto; overflow: visible; }
+  .car-line { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .car-line.thin { stroke-width: 1; stroke-opacity: .75; }
+  .beam { opacity: 0; animation: lights 1.4s ease-out 2.9s forwards; }
+  .lamp { opacity: 0; animation: lights .6s ease-out 2.8s forwards; }
+  .ground { height: 1px; background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent); opacity: .5; margin-top: -1px; }
+  @keyframes sheen { to { background-position: 0% 0; } }
+  @keyframes lights { to { opacity: 1; } }
+
+  /* ---------- marquee band ---------- */
+  .band { overflow: hidden; border-block: 1px solid var(--line); padding: 20px 0; background: linear-gradient(90deg, rgba(216,179,106,.07), transparent 30%, transparent 70%, rgba(216,179,106,.07)); }
+  .band-track { display: flex; width: max-content; animation: marq 46s linear infinite; }
+  .band-track span { font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 4vw, 2.7rem); color: transparent; -webkit-text-stroke: 1px var(--gold); white-space: nowrap; padding: 0 26px; }
+  .band-track i { font-style: normal; color: var(--ember); align-self: center; font-size: .8rem; }
+  @keyframes marq { to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section { padding: clamp(80px, 12vw, 140px) clamp(20px, 5vw, 64px); }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  h2 { font-family: var(--display); font-weight: 500; font-size: clamp(2.2rem, 5.5vw, 4.2rem); line-height: 1.02; margin: 0 0 18px; letter-spacing: -.01em; text-wrap: balance; }
+  .lede { color: var(--smoke); max-width: 37rem; margin: 0 0 56px; }
+
+  /* ---------- gold running frame ---------- */
+  .framed { position: relative; }
+  .framed::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; z-index: 6; pointer-events: none; opacity: 0; transition: opacity .5s;
+    background: conic-gradient(from var(--a), rgba(216,179,106,0) 0deg, rgba(216,179,106,0) 245deg, #9b6f2c 285deg, #f6dc94 325deg, #fff8dc 345deg, rgba(216,179,106,0) 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    animation: orbit 3.4s linear infinite; }
+  .framed:hover::before, .framed.lit::before, .framed:focus-visible::before, .framed.always::before { opacity: 1; }
+
+  /* ---------- fleet ---------- */
+  .card { border-radius: 10px; background: var(--panel); border: 1px solid var(--line); cursor: pointer; transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s, border-color .4s; --mx: 50%; --my: 50%; --glow: #d8b36a; }
+  .card:hover, .card.lit { transform: translateY(-6px); border-color: transparent; box-shadow: 0 30px 90px -26px var(--glow); }
+  .shot { position: relative; overflow: hidden; border-radius: 9px 9px 0 0; aspect-ratio: 4 / 5; background: #0b0908; }
+  .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .shot img, .card.lit .shot img { transform: scale(1.06); }
+  .shot::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; mix-blend-mode: screen; opacity: 0; transition: opacity .3s;
+    background: radial-gradient(circle 240px at var(--mx) var(--my), rgba(246,220,148,.30), rgba(216,179,106,.08) 45%, transparent 70%); }
+  .card:hover .shot::after { opacity: 1; }
+  .shot .fade { position: absolute; inset: auto 0 0 0; height: 38%; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(6,5,6,.7), transparent); }
+  .chip { position: absolute; left: 12px; top: 12px; z-index: 4; padding: 6px 12px; border-radius: 999px; font-size: .78rem; letter-spacing: .06em; background: rgba(6,5,6,.62); border: 1px solid rgba(246,220,148,.45); backdrop-filter: blur(4px); color: var(--gold-hi); }
+  .zoom { position: absolute; right: 12px; bottom: 12px; z-index: 4; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: rgba(6,5,6,.62); border: 1px solid rgba(246,220,148,.6); backdrop-filter: blur(4px); pointer-events: none; }
+  .zoom svg { width: 18px; height: 18px; stroke: var(--gold-hi); fill: none; stroke-width: 2; stroke-linecap: round; }
+  .cap { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 18px 20px 22px; }
+  .cap h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(1.3rem, 2.2vw, 1.65rem); line-height: 1.1; }
+  .cap .idx { display: block; font-size: .78rem; letter-spacing: .28em; color: var(--gold); margin-bottom: 6px; }
+  .cap p { margin: 0; color: var(--smoke); font-size: .92rem; text-align: right; }
+
+  /* fleet: one car per row, stacked vertically */
+  .fleet { display: flex; flex-direction: column; gap: clamp(44px, 7vw, 96px); margin-top: clamp(40px, 6vw, 72px); }
+  .cap .more { display: none; }
+  @media (min-width: 861px) {
+    .fleet .card { display: grid; grid-template-columns: 5fr 6fr; align-items: stretch; }
+    .fleet .card .shot { border-radius: 9px 0 0 9px; }
+    .fleet .card:nth-child(even) { grid-template-columns: 6fr 5fr; }
+    .fleet .card:nth-child(even) .shot { order: 2; border-radius: 0 9px 9px 0; }
+    .fleet .card .cap { flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; padding: clamp(28px, 5vw, 72px); }
+    .fleet .card .cap .idx { font-size: .85rem; margin-bottom: 14px; }
+    .fleet .card .cap h3 { font-size: clamp(2rem, 3.6vw, 3.4rem); }
+    .fleet .card .cap p { text-align: left; font-size: 1.1rem; }
+    .fleet .card .cap .more { display: inline-block; margin-top: 14px; color: var(--gold-hi); font-size: .95rem; letter-spacing: .06em; padding-bottom: 5px; border-bottom: 1px solid var(--gold); }
+  }
+
+  .wide { display: block; }
+  .wide .shot { aspect-ratio: 21 / 9; border-radius: 9px; }
+  .wide .shot .fade { height: 70%; background: linear-gradient(to top, rgba(6,5,6,.88), transparent); }
+  .wide .over { position: absolute; left: clamp(18px, 3vw, 40px); bottom: clamp(16px, 3vw, 34px); z-index: 4; max-width: 30rem; }
+  .wide .over h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 500; font-size: clamp(1.8rem, 4.4vw, 3.2rem); line-height: 1; }
+  .wide .over p { margin: 0; color: var(--ivory); opacity: .82; }
+
+  /* ---------- occasions ---------- */
+  .occ { border-top: 1px solid var(--line); }
+  .row { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: baseline; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .row::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: linear-gradient(90deg, var(--gold-hi), var(--ember)); transition: width .6s cubic-bezier(.2,.7,.2,1); }
+  .row:hover::after { width: 100%; }
+  .row h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(1.9rem, 5vw, 3.6rem); line-height: 1; transition: color .3s; }
+  .row:hover h3 { color: var(--gold-hi); }
+  .row p { margin: 0; color: var(--smoke); max-width: 30rem; }
+
+  /* ---------- plates studio ---------- */
+  .plates { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+  .plates label { display: block; font-size: .85rem; letter-spacing: .12em; color: var(--gold); margin: 0 0 8px; }
+  .plates input { width: 100%; font: 500 1.5rem/1.2 var(--display); color: var(--ivory); background: transparent; border: 0; border-bottom: 1px solid var(--gold); padding: 8px 0 12px; border-radius: 0; outline: none; }
+  .plates input:focus { border-bottom-color: var(--gold-hi); box-shadow: 0 8px 20px -14px var(--gold-hi); }
+  .swatches { display: flex; gap: 10px; margin: 22px 0 30px; flex-wrap: wrap; }
+  .sw { min-height: 42px; padding: 0 20px; border-radius: 999px; font: 600 .95rem/1 var(--body); color: var(--ivory); background: transparent; border: 1px solid var(--line); cursor: pointer; transition: all .2s; }
+  .sw[aria-pressed="true"] { border-color: var(--gold-hi); background: rgba(216,179,106,.14); color: var(--gold-hi); }
+  .plate-stage { position: relative; padding: clamp(22px, 5vw, 56px); border: 1px solid var(--line); border-radius: 14px; background: radial-gradient(ellipse at 50% 20%, rgba(216,179,106,.18), transparent 70%), #0a0908; }
+  .plate { --pc: #d8b36a; position: relative; width: 100%; aspect-ratio: 4.3 / 1; border-radius: 10px; overflow: hidden; display: grid; place-items: center; background: linear-gradient(180deg, #151210, #050404);
+    border: 2px solid var(--pc); box-shadow: inset 0 0 0 6px #050404, inset 0 0 0 7px var(--pc), 0 26px 60px rgba(0,0,0,.7), 0 0 70px -14px var(--pc); transition: border-color .3s, box-shadow .3s; }
+  .plate span { position: relative; z-index: 1; font-family: var(--display); font-style: italic; font-weight: 700; white-space: nowrap; line-height: 1; padding: 0 4%; transition: font-size .15s;
+    background: linear-gradient(180deg, #fff2c2, #d8b36a 55%, #9b6f2c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .plate.blue { --pc: #3fb4ff; }
+  .plate.blue span { background: linear-gradient(180deg, #d9f1ff, #3fb4ff 55%, #1d78c9); -webkit-background-clip: text; background-clip: text; }
+  .plate::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.16) 50%, transparent 58%); transform: translateX(-130%); animation: sweep 5.5s ease-in-out infinite; }
+  @keyframes sweep { 55%, 100% { transform: translateX(130%); } }
+  .plate-note { margin: 18px 0 0; text-align: center; color: var(--smoke); font-size: .9rem; }
+  .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: clamp(44px, 7vw, 80px); }
+  .strip figure { margin: 0; }
+  .strip img { display: block; width: 100%; aspect-ratio: 3.2 / 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+  .strip figcaption { margin-top: 10px; color: var(--smoke); font-size: .9rem; }
+
+  /* ---------- contact ---------- */
+  .contact { background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(216,179,106,.16), transparent 70%), var(--ink); border-top: 1px solid var(--line); }
+  .phone { display: inline-block; font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 7vw, 5rem); line-height: 1.1; text-decoration: none; margin: 8px 0 28px; color: var(--gold-hi); }
+  .phone:hover { color: var(--ivory); }
+  .meta { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 10px 36px; color: var(--smoke); font-size: .98rem; }
+  .meta a { color: var(--ivory); text-underline-offset: 4px; }
+  footer { padding: 32px clamp(20px, 5vw, 64px) 96px; color: var(--smoke); font-size: .9rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+  footer em { font-family: var(--display); color: var(--gold); }
+  .wa { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 45; box-shadow: 0 8px 30px rgba(0,0,0,.6); }
+
+  /* ---------- photo viewer ---------- */
+  .lb { position: fixed; inset: 0; z-index: 60; background: rgba(4,3,3,.97); }
+  .lb[hidden] { display: none; }
+  .lb-stage { position: absolute; inset: 0; padding: 64px 0 150px; display: flex; align-items: center; justify-content: center; touch-action: none; overflow: hidden; }
+  .lb-photo { position: relative; flex: none; border-radius: 6px; will-change: transform; box-shadow: 0 20px 80px rgba(0,0,0,.7); }
+  .lb-photo img { display: block; width: 100%; height: 100%; border-radius: 6px; user-select: none; -webkit-user-drag: none; opacity: 0; transition: opacity .35s; }
+  .lb-btn { position: absolute; z-index: 3; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0; color: var(--gold-hi); background: rgba(15,13,12,.72); border: 1px solid var(--gold); backdrop-filter: blur(6px); transition: background .2s; }
+  .lb-btn:hover { background: rgba(216,179,106,.22); }
+  .lb-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .lb-close { top: calc(14px + env(safe-area-inset-top, 0px)); right: 14px; }
+  .lb-prev { left: 14px; top: 50%; margin-top: -60px; }
+  .lb-next { right: 14px; top: 50%; margin-top: -60px; }
+  .lb-bottom { position: absolute; left: 0; right: 0; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 16px; pointer-events: none; }
+  .lb-cap { text-align: center; }
+  .lb-cap b { display: block; font-family: var(--display); font-weight: 500; font-size: 1.5rem; line-height: 1.1; }
+  .lb-cap span { color: var(--smoke); font-size: .9rem; }
+  .lb-thumbs { display: flex; gap: 8px; pointer-events: auto; max-width: 100%; overflow-x: auto; padding: 4px; }
+  .lb-thumbs button { flex: none; width: 56px; height: 56px; padding: 0; border-radius: 6px; border: 1px solid transparent; background: none; cursor: pointer; opacity: .55; overflow: hidden; transition: opacity .2s, border-color .2s; }
+  .lb-thumbs button img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lb-thumbs button.on { opacity: 1; border-color: var(--gold-hi); }
+  .lb-hint { position: absolute; left: 0; right: 0; top: calc(26px + env(safe-area-inset-top, 0px)); z-index: 2; text-align: center; color: var(--smoke); font-size: .9rem; pointer-events: none; transition: opacity .6s; }
+  .lb-hint.off { opacity: 0; }
+
+  @media (max-width: 960px) {
+    .plates { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .wide .shot { aspect-ratio: 4 / 3; }
+    .row { grid-template-columns: 1fr; gap: 10px; }
+    .nav .btn, .nav-links a.tx { display: none; }
+    .strip { grid-template-columns: 1fr; }
+    .lb-prev, .lb-next { top: auto; bottom: 150px; margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    .hero h1 { animation: none; background-position: 0% 0; }
+    .hero-bg, .band-track, .plate::after, .framed::before { animation: none; }
+    .beam, .lamp { animation: none; opacity: 1; }
+    .card, .shot img, .row::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Exotic Car Hire KZN, home">
+    <span class="lg-top">EX<svg class="lg-o" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="#ff5a1f"/><circle cx="20" cy="20" r="13.5" fill="#fff"/><circle cx="20" cy="20" r="9.5" fill="#1f5fd0"/><circle cx="20" cy="20" r="4.8" fill="#0a0a12"/></svg>TIC</span>
+    <span class="lg-sub">car hire<small>KZN</small></span>
+  </a>
+  <div class="nav-links">
+    <a class="tx" href="#fleet">Fleet</a>
+    <a class="tx" href="#plates">Plates</a>
+    <a class="btn btn-line" href="tel:+27837252146">Call 083 725 2146</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-copy">
+      <h1>Where Luxury Meets Prestige.</h1>
+      <p>Chauffeur-driven exotic cars for weddings, matric balls, birthdays and every entrance worth remembering. Proudly based in Durban, KwaZulu-Natal.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#fleet">Explore the fleet</a>
+        <a class="btn btn-line" href="#plates">Personalised plates</a>
+      </div>
+    </div>
+    <div class="road" aria-hidden="true">
+      <svg viewBox="0 0 800 220" preserveAspectRatio="xMaxYMax meet">
+        <defs>
+          <linearGradient id="beamGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#ff5a1f" stop-opacity=".55"/><stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/></linearGradient>
+          <radialGradient id="lampGrad"><stop offset="0" stop-color="#fff2d0"/><stop offset=".35" stop-color="#ff5a1f" stop-opacity=".9"/><stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/></radialGradient>
+        </defs>
+        <polygon class="beam" points="758,142 1300,60 1300,200" fill="url(#beamGrad)"/>
+        <path class="car-line" d="M40 150 C40 138 60 132 100 128 L190 118 C230 96 290 70 380 66 C460 64 520 84 560 106 L660 118 C720 124 760 134 762 150 L762 160 L740 160 A34 34 0 0 0 672 160 L250 160 A34 34 0 0 0 182 160 L60 160 C46 160 40 156 40 150 Z"/>
+        <path class="car-line thin" d="M232 116 C270 96 320 84 380 82 C440 81 490 94 528 114 Z"/>
+        <circle class="car-line thin" cx="216" cy="160" r="24"/>
+        <circle class="car-line thin" cx="706" cy="160" r="24"/>
+        <circle class="lamp" cx="752" cy="142" r="22" fill="url(#lampGrad)"/>
+      </svg>
+      <div class="ground"></div>
+    </div>
+    <script>
+      (function () {
+        try {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          document.querySelectorAll(".car-line").forEach(function (el, i) {
+            var L = el.getTotalLength();
+            el.style.strokeDasharray = L;
+            el.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
+              { duration: 2600, delay: 400 + i * 120, easing: "cubic-bezier(.5,0,.2,1)", fill: "both" });
+          });
+        } catch (err) {}
+      })();
+    </script>
+  </div>
+
+  <div class="band" aria-hidden="true">
+    <div class="band-track">
+      <span>Weddings</span><i>&#9670;</i><span>Matric balls</span><i>&#9670;</i><span>Birthdays</span><i>&#9670;</i><span>Photoshoots</span><i>&#9670;</i><span>Special occasions</span><i>&#9670;</i>
+      <span>Weddings</span><i>&#9670;</i><span>Matric balls</span><i>&#9670;</i><span>Birthdays</span><i>&#9670;</i><span>Photoshoots</span><i>&#9670;</i><span>Special occasions</span><i>&#9670;</i>
+    </div>
+  </div>
+
+  <section id="fleet">
+    <div class="wrap">
+      <h2 class="rv">The fleet</h2>
+      <p class="lede rv">Five icons, each with a professional chauffeur. Tap any car to see it at real events and from every angle.</p>
+      <div id="together" class="rv"></div>
+      <div class="fleet" id="fleetGrid"></div>
+    </div>
+  </section>
+
+  <section id="occasions" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="rv">Made for the big days</h2>
+      <p class="lede rv">Whatever you are celebrating, the car is part of the story.</p>
+      <div class="occ">
+        <div class="row rv"><h3>Weddings</h3><p>Arrive as a couple in a car that matches the day. Elegant, on time and unforgettable in the photos.</p></div>
+        <div class="row rv"><h3>Matric balls and proms</h3><p>The entrance everyone talks about on Monday. A supercar, a chauffeur and a night to remember.</p></div>
+        <div class="row rv"><h3>Birthdays</h3><p>Turn the birthday into an event with a ride nobody expects.</p></div>
+        <div class="row rv"><h3>Photoshoots and corporate events</h3><p>Show-stopping cars for the camera, the launch or the guest of honour.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plates" style="padding-top:0">
+    <div class="wrap">
+      <div class="plates">
+        <div class="rv">
+          <h2>Your name on the plate</h2>
+          <p class="lede" style="margin-bottom:34px">Personalised event number plates for proms, matric balls, weddings, photoshoots and special occasions. Choose your name, word or message and make the entrance extra special.</p>
+          <label for="plateText">Type a name or message</label>
+          <input id="plateText" type="text" maxlength="14" value="Bride" autocomplete="off" spellcheck="false">
+          <div class="swatches" role="group" aria-label="Plate colour">
+            <button class="sw" type="button" data-c="gold" aria-pressed="true">Gold</button>
+            <button class="sw" type="button" data-c="blue" aria-pressed="false">Ice blue</button>
+          </div>
+          <a class="btn btn-gold" id="plateWa" href="#" target="_blank" rel="noopener">Send this design on WhatsApp</a>
+        </div>
+        <div class="plate-stage rv">
+          <div class="plate" id="plate"><span id="plateOut">Bride</span></div>
+          <p class="plate-note">A preview of how your plate could look. Message us to confirm the design.</p>
+        </div>
+      </div>
+      <div class="strip" id="strip"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="rv">Tell us the date.<br>We will bring the car.</h2>
+      <p class="lede rv">Message us on WhatsApp or call. Tell us about your event and we will take it from there.</p>
+      <a class="phone rv" href="tel:+27837252146">083 725 2146</a>
+      <div class="actions rv">
+        <a class="btn btn-gold" href="https://wa.me/27837252146?text=Hi%20Exotic%20Car%20Hire%20KZN%2C%20I%20found%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20hiring%20a%20car%20for%20my%20event." target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn btn-line" href="tel:+27837252146">Call now</a>
+      </div>
+      <div class="meta rv">
+        <span>Phoenix, Durban, KwaZulu-Natal</span>
+        <a href="https://www.facebook.com/p/Exotic-Car-Hire-Wedding-Prom-Events-Kzn-100083323819217/" target="_blank" rel="noopener">Follow us on Facebook</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><span>Exotic Car Hire KZN</span><em>Where Luxury Meets Prestige</em></footer>
+
+<a class="btn btn-gold wa" href="https://wa.me/27837252146?text=Hi%20Exotic%20Car%20Hire%20KZN%2C%20I%20found%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20hiring%20a%20car%20for%20my%20event." target="_blank" rel="noopener">WhatsApp us</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-stage" id="lbStage"><div class="lb-photo framed always" id="lbPhoto"><img id="lbImg" alt="" draggable="false"></div></div>
+  <div class="lb-hint" id="lbHint">Pinch or double-tap to zoom. Swipe for more.</div>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close photos"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="lb-bottom">
+    <div class="lb-cap"><b id="lbName"></b><span id="lbSpec"></span></div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+  </div>
+</div>
+
+<script>
+  /* ==================================================================
+     PHOTOS AND COLLECTIONS
+     To change a car: edit its name/spec, or replace the image files in
+     the "images" folder (keep the same file names).
+  ================================================================== */
+  var IMG = {"audi1": "images/audi1.jpg", "audi2": "images/audi2.jpg", "audi3": "images/audi3.jpg", "audi4": "images/audi4.jpg", "bmw1": "images/bmw1.jpg", "bmw2": "images/bmw2.jpg", "bmw3": "images/bmw3.jpg", "bmw4": "images/bmw4.jpg", "hummer1": "images/hummer1.jpg", "hummer2": "images/hummer2.jpg", "hummer3": "images/hummer3.jpg", "hummer4": "images/hummer4.jpg", "lineup": "images/lineup.jpg", "mclaren1": "images/mclaren1.jpg", "mclaren2": "images/mclaren2.jpg", "mclaren3": "images/mclaren3.jpg", "mclaren4": "images/mclaren4.jpg", "merc1": "images/merc1.jpg", "merc2": "images/merc2.jpg", "merc3": "images/merc3.jpg", "plate_audi": "images/plate_audi.jpg", "plate_bmw": "images/plate_bmw.jpg", "plate_mclaren": "images/plate_mclaren.jpg"};
+
+  var COLL = [
+    { name: "McLaren 650S", spec: "V8 twin turbo", glow: "#ffc21a", pos: "50% 40%", photos: ["mclaren1", "mclaren2", "mclaren3", "mclaren4"] },
+    { name: "BMW i8", spec: "Chauffeur driven", glow: "#f6dc94", pos: "50% 50%", photos: ["bmw1", "bmw2", "bmw3", "bmw4"] },
+    { name: "Mercedes-Benz CLE Convertible", spec: "Chauffeur driven", glow: "#e0284a", pos: "42% 55%", photos: ["merc1", "merc2", "merc3"] },
+    { name: "Audi R8", spec: "V8", glow: "#f6dc94", pos: "50% 58%", photos: ["audi1", "audi2", "audi3", "audi4"] },
+    { name: "Hummer H3", spec: "Chauffeur driven", glow: "#cfd6e4", pos: "38% 55%", photos: ["hummer1", "hummer2", "hummer3", "hummer4"] }
+  ];
+  var ALL = { name: "The full fleet", spec: "Every entrance, one lineup", glow: "#d8b36a", pos: "50% 60%", photos: ["lineup"] };
+  var VIEW = COLL.concat([ALL]);   /* index 5 is the lineup */
+
+  function $(id) { return document.getElementById(id); }
+  var zoomSvg = '<span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M11 8.5v5M8.5 11h5"/></svg></span>';
+
+  /* hero backdrop reuses the lineup photo */
+  $("heroBg").style.backgroundImage = 'url("' + IMG.lineup + '")';
+
+  /* ---------- render cards ---------- */
+  function makeCard(c, i, wide) {
+    var card = document.createElement("article");
+    card.className = "card framed" + (wide ? " wide" : "");
+    card.style.setProperty("--glow", c.glow);
+    var n = c.photos.length;
+    var inner = '<div class="shot"><img alt="' + c.name + '" src="' + IMG[c.photos[0]] + '" style="object-position:' + c.pos + '"' + (i > 1 ? ' loading="lazy"' : '') + '><span class="fade"></span>' +
+      (n > 1 ? '<span class="chip">' + n + ' photos</span>' : '') + zoomSvg;
+    if (wide) inner += '<div class="over"><h3>' + c.name + '</h3><p>' + c.spec + '</p></div>';
+    inner += '</div>';
+    if (!wide) inner += '<div class="cap"><div><span class="idx">0' + (i + 1) + '</span><h3>' + c.name + '</h3></div><p>' + c.spec + '</p><span class="more">View all ' + n + ' photos</span></div>';
+    card.innerHTML = inner;
+    card.tabIndex = 0; card.setAttribute("role", "button"); card.setAttribute("aria-label", "View photos of " + c.name);
+    card.addEventListener("click", function () { window.openLb(i, 0, card); });
+    card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.openLb(i, 0, card); } });
+    card.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+    return card;
+  }
+  $("together").appendChild(makeCard(ALL, 5, true));
+  var grid = $("fleetGrid");
+  COLL.forEach(function (c, i) { var el = makeCard(c, i, false); el.classList.add("rv"); grid.appendChild(el); });
+
+  /* ---------- plates strip ---------- */
+  var STRIP = [["plate_audi", "On the Audi R8"], ["plate_mclaren", "On the McLaren 650S"], ["plate_bmw", "On the BMW i8"]];
+  $("strip").innerHTML = STRIP.map(function (s) { return '<figure class="rv"><img loading="lazy" alt="' + s[1] + '" src="' + IMG[s[0]] + '"><figcaption>' + s[1] + '</figcaption></figure>'; }).join("");
+
+  /* ---------- plate studio ---------- */
+  (function () {
+    var input = $("plateText"), out = $("plateOut"), plate = $("plate"), wa = $("plateWa"), colour = "gold";
+    function update() {
+      var t = input.value.trim() || "Your name";
+      out.textContent = t;
+      var w = plate.clientWidth, h = plate.clientHeight;
+      if (w) out.style.fontSize = Math.min(h * 0.6, (w * 0.86) / (Math.max(t.length, 3) * 0.55)) + "px";
+      var msg = 'Hi Exotic Car Hire KZN, I would like a personalised event plate that says "' + t + '" in ' + (colour === "gold" ? "gold" : "ice blue") + '. Please send me the details.';
+      wa.href = "https://wa.me/27837252146?text=" + encodeURIComponent(msg);
+    }
+    input.addEventListener("input", update);
+    document.querySelectorAll(".sw").forEach(function (b) {
+      b.addEventListener("click", function () {
+        colour = b.getAttribute("data-c");
+        plate.className = "plate" + (colour === "blue" ? " blue" : "");
+        document.querySelectorAll(".sw").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        update();
+      });
+    });
+    addEventListener("resize", update);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+    update();
+  })();
+
+  /* ---------- scroll reveal + light up the car in view (phones) ---------- */
+  (function () {
+    var els = document.querySelectorAll(".rv");
+    if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+    setTimeout(function () { els.forEach(function (e) { e.classList.add("in"); }); }, 6000);
+
+    if (window.matchMedia("(hover: none)").matches) {
+      var lit = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { e.target.classList.toggle("lit", e.isIntersecting); });
+      }, { rootMargin: "-32% 0px -32% 0px" });
+      document.querySelectorAll(".card").forEach(function (c) { lit.observe(c); });
+    }
+  })();
+
+  /* ==================================================================
+     GOLD SPARKLE: bursts when you tap a button, link or car.
+     With a mouse it also trails over buttons and cars.
+  ================================================================== */
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var cv = $("fx"), ctx = cv.getContext("2d");
+    var parts = [], running = false, lastX = -99, lastY = -99;
+    var COLORS = ["#fff6d4", "#f6dc94", "#d8b36a", "#ffb37a", "#ff5a1f"];
+    function size() { var d = Math.min(window.devicePixelRatio || 1, 2); cv.width = innerWidth * d; cv.height = innerHeight * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
+    size(); addEventListener("resize", size);
+    function spawn(x, y, n) {
+      for (var i = 0; i < n && parts.length < 320; i++) {
+        var big = Math.random() < .18;
+        parts.push({ x: x + (Math.random() - .5) * 16, y: y + (Math.random() - .5) * 16, vx: (Math.random() - .5) * 1.4, vy: -Math.random() * 1.1 - .2,
+          s: big ? 8 + Math.random() * 6 : 3 + Math.random() * 4, life: 1, decay: .014 + Math.random() * .02, rot: Math.random() * 3, spin: (Math.random() - .5) * .1,
+          c: COLORS[(Math.random() * COLORS.length) | 0] });
+      }
+      if (!running) { running = true; requestAnimationFrame(tick); }
+    }
+    function star(p) {
+      var s = p.s * (.5 + p.life * .5);
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.globalAlpha = Math.max(p.life, 0); ctx.fillStyle = p.c;
+      ctx.beginPath(); ctx.moveTo(0, -s); ctx.quadraticCurveTo(0, 0, s, 0); ctx.quadraticCurveTo(0, 0, 0, s); ctx.quadraticCurveTo(0, 0, -s, 0); ctx.quadraticCurveTo(0, 0, 0, -s); ctx.fill(); ctx.restore();
+    }
+    function tick() {
+      ctx.clearRect(0, 0, innerWidth, innerHeight); ctx.globalCompositeOperation = "lighter";
+      for (var i = parts.length - 1; i >= 0; i--) {
+        var p = parts[i]; p.x += p.vx; p.y += p.vy; p.vy += .03; p.rot += p.spin; p.life -= p.decay;
+        if (p.life <= 0) { parts.splice(i, 1); continue; } star(p);
+      }
+      ctx.globalCompositeOperation = "source-over";
+      if (parts.length) requestAnimationFrame(tick); else running = false;
+    }
+    if (!reduce) {
+      addEventListener("pointerdown", function (e) { var t = e.target.closest && e.target.closest("a, button, .card"); if (t) spawn(e.clientX, e.clientY, 18); }, { passive: true });
+      addEventListener("pointermove", function (e) {
+        if (e.pointerType !== "mouse") return;
+        var t = e.target.closest && e.target.closest(".btn, .card"); if (!t) return;
+        var dx = e.clientX - lastX, dy = e.clientY - lastY; if (dx * dx + dy * dy < 100) return;
+        lastX = e.clientX; lastY = e.clientY; spawn(e.clientX, e.clientY, t.classList.contains("card") ? 3 : 2);
+      }, { passive: true });
+    }
+  })();
+
+  /* ==================================================================
+     PHOTO VIEWER: tap a car to open its collection. Pinch, double-tap
+     or scroll to zoom, drag to move, swipe or use arrows for the next.
+  ================================================================== */
+  (function () {
+    var lb = $("lb"), stage = $("lbStage"), photo = $("lbPhoto"), img = $("lbImg"), hint = $("lbHint"),
+        nameEl = $("lbName"), specEl = $("lbSpec"), thumbs = $("lbThumbs"), prev = $("lbPrev"), next = $("lbNext");
+    var ci = 0, pi = 0, s = 1, tx = 0, ty = 0, opener = null, hintTimer = null;
+    var ptrs = new Map(), pinch = null, pan = null, lastTap = { t: 0, x: 0, y: 0 };
+    function cur() { return VIEW[ci]; }
+    function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    function limits() { return { x: Math.max(0, (photo.offsetWidth * s - innerWidth) / 2), y: Math.max(0, (photo.offsetHeight * s - innerHeight) / 2) }; }
+    function apply(animate) {
+      var L = limits(); tx = clamp(tx, -L.x, L.x); ty = clamp(ty, -L.y, L.y);
+      photo.style.transition = animate ? "transform .25s ease" : "none";
+      photo.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
+    }
+    function center() { var r = stage.getBoundingClientRect(); return { x: r.left + photo.offsetLeft + photo.offsetWidth / 2, y: r.top + photo.offsetTop + photo.offsetHeight / 2 }; }
+    function zoomAt(ns, px, py) { var c = center(), lx = (px - c.x - tx) / s, ly = (py - c.y - ty) / s; s = ns; tx = px - c.x - s * lx; ty = py - c.y - s * ly; }
+    function fit() {
+      if (!img.naturalWidth) return;
+      var r = img.naturalWidth / img.naturalHeight, bw = innerWidth * 0.94, bh = Math.max(innerHeight - 64 - 150, 180);
+      var w = Math.min(bw, bh * r);
+      photo.style.width = w + "px"; photo.style.height = (w / r) + "px";
+      apply(false); img.style.opacity = 1;
+    }
+    function load() {
+      var c = cur(), src = IMG[c.photos[pi]];
+      s = 1; tx = 0; ty = 0;
+      nameEl.textContent = c.name;
+      specEl.textContent = c.photos.length > 1 ? c.spec + "  |  " + (pi + 1) + " of " + c.photos.length : c.spec;
+      img.alt = c.name;
+      if (img.getAttribute("src") === src && img.complete) { fit(); }
+      else { img.style.opacity = 0; img.onload = fit; img.src = src; }
+      var ths = thumbs.children;
+      for (var i = 0; i < ths.length; i++) ths[i].classList.toggle("on", i === pi);
+    }
+    function buildThumbs() {
+      var c = cur(); thumbs.innerHTML = "";
+      var multi = c.photos.length > 1;
+      thumbs.style.display = multi ? "flex" : "none";
+      prev.style.display = next.style.display = multi ? "" : "none";
+      c.photos.forEach(function (k, i) {
+        var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Photo " + (i + 1));
+        b.innerHTML = '<img alt="" src="' + IMG[k] + '">';
+        b.addEventListener("click", function () { pi = i; load(); });
+        thumbs.appendChild(b);
+      });
+    }
+    function go(d) { var n = cur().photos.length; pi = (pi + d + n) % n; load(); }
+    function close() { lb.hidden = true; document.body.style.overflow = ""; ptrs.clear(); pinch = null; pan = null; if (opener && opener.focus) opener.focus(); }
+    window.openLb = function (c, p, el) {
+      ci = c; pi = p || 0; opener = el || null;
+      lb.hidden = false; document.body.style.overflow = "hidden";
+      hint.classList.remove("off"); clearTimeout(hintTimer); hintTimer = setTimeout(function () { hint.classList.add("off"); }, 3500);
+      buildThumbs(); load(); $("lbClose").focus();
+    };
+    $("lbClose").addEventListener("click", close);
+    prev.addEventListener("click", function () { go(-1); });
+    next.addEventListener("click", function () { go(1); });
+    addEventListener("resize", function () { if (!lb.hidden) fit(); });
+    addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+      else if (e.key === "+" || e.key === "=") { zoomAt(clamp(s * 1.4, 1, 5), innerWidth / 2, innerHeight / 2); apply(true); }
+      else if (e.key === "-") { zoomAt(clamp(s / 1.4, 1, 5), innerWidth / 2, innerHeight / 2); if (s === 1) { tx = 0; ty = 0; } apply(true); }
+    });
+    function dist(a, b) { var dx = a.x - b.x, dy = a.y - b.y; return Math.sqrt(dx * dx + dy * dy); }
+    stage.addEventListener("pointerdown", function (e) {
+      try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+      ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (ptrs.size === 2) {
+        var p = Array.from(ptrs.values()), c = center();
+        pinch = { d: dist(p[0], p[1]), s: s, tx: tx, ty: ty, mx: (p[0].x + p[1].x) / 2, my: (p[0].y + p[1].y) / 2, cx: c.x, cy: c.y }; pan = null;
+      } else if (ptrs.size === 1) { pan = { x: e.clientX, y: e.clientY, tx: tx, ty: ty, t: Date.now(), moved: false }; }
+    });
+    stage.addEventListener("pointermove", function (e) {
+      if (!ptrs.has(e.pointerId)) return;
+      ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pinch && ptrs.size >= 2) {
+        var p = Array.from(ptrs.values()), ns = clamp(pinch.s * dist(p[0], p[1]) / pinch.d, 1, 5);
+        var mx = (p[0].x + p[1].x) / 2, my = (p[0].y + p[1].y) / 2;
+        var lx = (pinch.mx - pinch.cx - pinch.tx) / pinch.s, ly = (pinch.my - pinch.cy - pinch.ty) / pinch.s;
+        s = ns; tx = mx - pinch.cx - s * lx; ty = my - pinch.cy - s * ly; apply(false);
+      } else if (pan && ptrs.size === 1) {
+        var dx = e.clientX - pan.x, dy = e.clientY - pan.y;
+        if (Math.abs(dx) + Math.abs(dy) > 8) pan.moved = true;
+        if (s > 1) { tx = pan.tx + dx; ty = pan.ty + dy; apply(false); }
+      }
+    });
+    function up(e) {
+      if (!ptrs.has(e.pointerId)) return;
+      var wasPinch = !!pinch; ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null;
+      if (wasPinch) { pan = null; if (s < 1.05) { s = 1; tx = 0; ty = 0; apply(true); } return; }
+      if (!pan) return;
+      var p = pan, dx = e.clientX - p.x, dy = e.clientY - p.y, dt = Date.now() - p.t; pan = null;
+      if (e.type !== "pointerup") return;
+      if (s === 1 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && cur().photos.length > 1) { go(dx < 0 ? 1 : -1); return; }
+      if (!p.moved && dt < 350) {
+        var now = Date.now();
+        if (now - lastTap.t < 320 && Math.abs(e.clientX - lastTap.x) < 30 && Math.abs(e.clientY - lastTap.y) < 30) {
+          lastTap.t = 0; if (s > 1) { s = 1; tx = 0; ty = 0; } else { zoomAt(2.5, e.clientX, e.clientY); } apply(true);
+        } else {
+          lastTap = { t: now, x: e.clientX, y: e.clientY };
+          var r = photo.getBoundingClientRect();
+          if (!(e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom)) close();
+        }
+      }
+    }
+    stage.addEventListener("pointerup", up); stage.addEventListener("pointercancel", up);
+    stage.addEventListener("wheel", function (e) {
+      e.preventDefault();
+      var ns = clamp(s * Math.exp(-e.deltaY * 0.002), 1, 5); zoomAt(ns, e.clientX, e.clientY);
+      if (ns === 1) { tx = 0; ty = 0; } apply(false);
+    }, { passive: false });
+  })();
+</script>
+</body>
+</html>
